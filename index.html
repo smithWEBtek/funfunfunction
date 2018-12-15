@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet"/>
+    <title>Creating and Inserting DOM Elements</title>
+  </head>
+  <body>
+    <main id="main">
+  
+      <!-- <div>
+        <form type="text" id='myfileform' onsubmit='parseFile()'>
+          Upload javascript file: <br>
+          <input type="file" id="myfile" multiple><br>
+          <input type="submit">
+        </form>
+      </div>
+      <hr> -->
+    
+<input type='file' accept='file/*' onchange='openFile(event)'><br>
+ Data should appear below: 
+ <div id="output"></div>
+ 
+
+</main>
+<script>
+    var openFile = function(event) {
+      var input = event.target;
+  
+      var reader = new FileReader();
+      reader.onload = function(){
+        var dataURL = reader.result;
+        var output = document.getElementById('output');
+        output.src = dataURL;
+      };
+      debugger
+
+      // reader.readAsDataURL(input.files[0])
+      let asdf = reader.readAsDataURL(input.files[0])
+    };
+  </script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="data.js"></script>
+    <!-- <script src="index.js"></script> -->
+  </body>
+</html>
